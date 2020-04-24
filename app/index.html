@@ -1,0 +1,214 @@
+<!doctype html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>myPagina</title>
+   <!--  <link rel="apple-touch-icon" href="apple-touch-icon.png">-->
+    <!-- Place favicon.ico in the root directory -->
+    <!-- build:css styles/vendor.css -->
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
+    <!-- endbuild -->
+    <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/style.css">
+    <!-- endbuild -->
+       <!-- build:css styles/cambiarModo.css -->
+      <link href="styles/cambiarModo.css" rel="stylesheet">
+    <!-- endbuild -->
+    <!-- build:js scripts/modernizr.js -->
+    <script src="scripts/modernizr.js"></script>
+    <!-- endbuild -->
+  </head>
+  <body>
+
+ <!-- Header -->
+    <header>
+       <div class="container">
+        <h1 class="display-3">Gestion Prácticas!<i class="fas fa-chalkboard-teacher"></i></h1>
+        <p class="lead">José García Castiñeira</p>
+      </div>
+          <div class="container">
+       <a class="nav-link" href="#"><button type="button" class="btn btn-dark align-content-center" onclick="cambiarModo()">Oscuro / Claro</button></a>
+      </div>
+    </header>
+
+   <!-- A grey horizontal navbar that becomes vertical on small screens -->
+    <nav class="navbar navbar-expand-sm navbar-light bg-light" style="padding-left:15%;">
+      <a class="navbar-brand" href="#"></a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+       <ul class="navbar-nav">
+        <li class="nav-item">
+        <a class="nav-link" href="#"><i class='fas fa-users'></i>Candidaturas</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"><i class='fas fa-archive'></i>Ofertas</a>
+        </li>
+        <li class="nav-item">
+        <a class="nav-link" href="#"><i class='fas fa-people-arrows'></i>Cruces</a>
+        </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container-fluid justify-content">
+  <div class="row">
+    <div class="col-sm-2"  id="columnaNotas">
+          <i class='far fa-edit'></i>
+      Notas
+
+
+       <!-- Span trigger modal -->
+
+      <!-- <span id="anhadirNotas" data-toggle="modal" class="fas fa-plus-circle" data-target="#modalSubscriptionForm" ><span>-->
+<!-- Modal -->
+<!-- Modal -->
+<!-- Button to Open the Modal -->
+<button type="button" class="fas fa-plus-circle" data-toggle="modal" data-target="#myModal">
+</button>
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Modal Heading</h4>
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+              <div class="md-form mb-5">
+          <i class="fas fa-user prefix grey-text"></i>
+          <input type="text" id="form3" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form3">Your name</label>
+        </div>
+
+        <div class="md-form mb-4">
+          <i class="fas fa-envelope prefix grey-text"></i>
+          <input type="email" id="form2" class="form-control validate">
+          <label data-error="wrong" data-success="right" for="form2">Your email</label>
+        </div>
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+       <span id ="notes"><span>
+  <!--  <aside name="asideNotas" id="asideNotas">
+
+    </aside>-->
+    </div>
+    <div class="col-sm-8">
+      <i class='fas fa-table'></i>Tabla
+    <form>
+  <div class="form-row">
+    <div class="col">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck1">
+          <label class="custom-control-label" for="customCheck1">Abiertas</label>
+        </div>
+    </div>
+    <div class="col">
+            <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck2">
+          <label class="custom-control-label" for="customCheck2">Cerradas</label>
+        </div>
+    </div>
+  </div>
+</form>
+    <form>
+  <div class="form-row">
+    <div class="col">
+        <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck3">
+          <label class="custom-control-label" for="customCheck3">Cruzadas</label>
+        </div>
+    </div>
+    <div class="col">
+            <div class="custom-control custom-checkbox">
+          <input type="checkbox" class="custom-control-input" id="customCheck4">
+          <label class="custom-control-label" for="customCheck4">En Seleccion</label>
+        </div>
+    </div>
+  </div>
+</form>
+
+
+      <div class="row" id="tabla" name="tabla">
+        <!-- <table class="table table-hover table-bordered" id="tabla">
+            <thead>
+                <tr >
+                    <th scope="col">#</th>
+                    <th scope="col">Data Pres.</th>
+                    <th scope="col">Apellidos</th>
+                    <th scope="col">Dni</th>
+                    <th scope="col">Tlef</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Titulación</th>
+                </tr>
+            </thead>
+            <tbody id="cuerpoTabla"></tbody>
+        </table> -->
+    </div>
+        <main>
+    </main>
+
+    </div>
+    <div class="col-sm-2" id="columnaMensajes" >
+     <i class='fas fa-envelope'></i>Mensajes
+     <span id ="miBoton"><span>
+       <aside name="asideMensajes" id="asideMensajes">
+
+        </aside>
+    </div>
+  </div>
+</div>
+
+
+
+    <footer>
+           <div class="jumbotron text-center" style="margin-bottom:0;">
+            <h4>&copy; Jose García Castiñeira</h4>
+        </div>
+    </footer>
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
+    <script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='https://www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script> -->
+
+    </script>
+
+    <!-- build:js scripts/vendor.js -->
+    <script type="text/javascript" src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!-- endbuild -->
+    <!-- build:js scripts/main.js -->
+   <!--  <script src="scripts/main.js"></script>-->
+    <script src="scripts/cambiarModo.js"></script>
+      <script src="scripts/cargarTabla.js"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <!-- endbuild -->
+  </body>
+</html>

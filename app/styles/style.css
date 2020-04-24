@@ -1,0 +1,18 @@
+#columnaNotas{
+  border:1px solid black;
+}
+#columnaMensajes{
+  border:1px  solid black;
+
+}
+*{
+  padding:2px;
+}
+table{
+  margin:1%;
+}
+
+.mensaje{
+  border: 1px solid black;
+}
+
