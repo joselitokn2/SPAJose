@@ -28,7 +28,6 @@ $.getJSON("../data/candidatures.json", function (json) {
     headerCell.innerHTML = columnNames[i];
     row.appendChild(headerCell);
   }
-
   var datamap = {
     "Fecha Pres.": "dataPresentacion",
     Apellidos: "surname",
