@@ -8,77 +8,124 @@ console.log('\'Allo \'Allo!');
 // https://getbootstrap.com/docs/4.0/components/popovers/#example-enable-popovers-everywhere
 // $(function () { $('[data-toggle="popover"]').popover(); });
 'use strict'
-// Store
-//localStorage.lastname = "Smith";
-// Retrieve
-//document.getElementById("result").innerHTML = localStorage.lastname;
-var anhadirNotas = document.getElementById(anhadirNotas);
-anhadirNotas.addEventListener
 
-anhadirNotas.addEventListener("click", e => {
+
+//
+
+/**/
+
+//
+
+// Variables globales
+
+const formularioUI = document.querySelector('#formulario');
+const listaActividadesUI = document.getElementById('listaActividades');
+let arrayActividades = [];
+
+
+// Funciones
+
+const CrearItem = (actividad) => {
+
+  let item = {
+    actividad: actividad,
+    estado: false
+  }
+
+  arrayActividades.push(item);
+
+  return item;
+
+}
+
+const GuardarDB = () => {
+
+  localStorage.setItem('rutina', JSON.stringify(arrayActividades));
+
+  PintarDB();
+
+}
+
+const PintarDB = () => {
+
+  listaActividadesUI.innerHTML = '';
+
+  arrayActividades = JSON.parse(localStorage.getItem('rutina'));
+
+  if(arrayActividades === null){
+    arrayActividades = [];
+  }else{
+
+    arrayActividades.forEach(element => {
+
+      if(element.estado){
+        listaActividadesUI.innerHTML += `<div class="alert alert-success" role="alert"><i class="material-icons float-left">description</i><b>${element.actividad}</b><span class="float-right"><i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`
+      }else{
+        listaActividadesUI.innerHTML += `<div class="alert alert-danger" role="alert"><i class="material-icons float-left">description</i><b>${element.actividad}</b><i class="material-icons">done</i><i class="material-icons">delete</i></span></div>`
+      }
+    });
+
+  }
+}
+
+const EliminarDB = (actividad) => {
+  let indexArray;
+  arrayActividades.forEach((elemento, index) => {
+
+    if(elemento.actividad === actividad){
+      indexArray = index;
+    }
+
+  });
+
+  arrayActividades.splice(indexArray,1);
+  GuardarDB();
+
+}
+
+const EditarDB = (actividad) => {
+
+  let indexArray = arrayActividades.findIndex((elemento)=>elemento.actividad === actividad);
+
+  arrayActividades[indexArray].estado = true;
+
+  GuardarDB();
+
+}
+
+
+
+
+// EventListener
+
+formularioUI.addEventListener('submit', (e) => {
+
   e.preventDefault();
-  modal();
+  let actividadUI = document.querySelector('#actividad').value;
+
+  CrearItem(actividadUI);
+  GuardarDB();
+
+  formularioUI.reset();
+
 });
 
-/*
-function guardarNota() {
-modal.style.display = "none";
-//Guarda contenido
-var tituloNota = document.getElementById("tituloNota").value;
-var cuerpoNota = document.getElementById("cuerpoNota").value;
+document.addEventListener('DOMContentLoaded', PintarDB);
 
-if (tituloNota !== "" && cuerpoNota !== "") {
-var nota = new Nota(tituloNota, cuerpoNota);
-console.log(nota.tituloNota);
-console.log(nota.cuerpoNota);
+listaActividadesUI.addEventListener('click', (e) => {
 
-notasGuardadas.push(nota);
-console.log(notasGuardadas);
-}
+  e.preventDefault();
 
-if (notasGuardadas.length > 0) {
-
-var notes = document.getElementById("notes");
-
-var card = document.createElement("div");
-card.classList.add("card");
-card.classList.add("m-1");
-card.setAttribute("id", tituloNota);
-
-notes.appendChild(card);
-
-var cardBody = document.createElement("div");
-cardBody.classList.add("card-body");
-
-card.appendChild(cardBody);
-
-var cardTitle = document.createElement("h5");
-cardTitle.classList.add("card-title");
-cardTitle.appendChild(document.createTextNode(tituloNota));
-
-cardBody.appendChild(cardTitle);
-
-var cardText = document.createElement("p");
-cardText.classList.add("card-text");
-cardText.appendChild(document.createTextNode(cuerpoNota));
-
-cardBody.appendChild(cardText);
-
-var cardBtn = document.createElement("button");
-cardBtn.classList.add("btn");
-cardBtn.appendChild(document.createTextNode("Eliminar"));
-
-cardBtn.onclick = function() {
-  var i = notasGuardadas.indexOf(nota);
-  if (i !== -1) {
-      notasGuardadas.splice(i, 1);
+  if(e.target.innerHTML === 'done' || e.target.innerHTML === 'delete'){
+    let texto = e.path[2].childNodes[1].innerHTML;
+    if(e.target.innerHTML === 'delete'){
+      // Accción de eliminar
+      EliminarDB(texto);
+    }
+    if(e.target.innerHTML === 'done'){
+      // Accción de editar
+      EditarDB(texto);
+    }
   }
-  console.log(notasGuardadas);
-}
 
-
-
-cardBody.appendChild(cardBtn);
-}
-}
- */
+});

@@ -2,7 +2,7 @@
   "notes": [
 
 
-{"id":1,"name":"Comprobar candidatura"},
-  {"id":2,"name":"Analizar titulaciones"}
+{"id":1,"nombre":"Candidatura", "descripcion":"Comprobar candidatura"},
+  {"id":2,"nombre":"Analizar titulaciones", "descripcion":"Comprobar candidatura"}
   ]
   }

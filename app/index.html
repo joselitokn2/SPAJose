@@ -5,12 +5,13 @@
     <meta name="description" content="">
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>myPagina</title>
+    <title>myPagina Jose 👀</title>
    <!--  <link rel="apple-touch-icon" href="apple-touch-icon.png">-->
     <!-- Place favicon.ico in the root directory -->
     <!-- build:css styles/vendor.css -->
     <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css" type="text/css" />
     <!-- endbuild -->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/style.css">
     <!-- endbuild -->
@@ -27,10 +28,7 @@
     <header>
        <div class="container">
         <h1 class="display-3">Gestion Prácticas!<i class="fas fa-chalkboard-teacher"></i></h1>
-        <p class="lead">José García Castiñeira</p>
-      </div>
-          <div class="container">
-       <a class="nav-link" href="#"><button type="button" class="btn btn-dark align-content-center" onclick="cambiarModo()">Oscuro / Claro</button></a>
+        <p class="lead">José García Castiñeira👀</p>
       </div>
     </header>
 
@@ -43,77 +41,80 @@
     <div class="collapse navbar-collapse" id="navbarNav">
        <ul class="navbar-nav">
         <li class="nav-item">
-        <a class="nav-link" href="#"><i class='fas fa-users'></i>Candidaturas</a>
+
+           <button class="btn btn-lg" style="background-color:transparent;" onclick="traer()">
+        <i class='fas fa-users'></i>Candidaturas
+        </button>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#"><i class='fas fa-archive'></i>Ofertas</a>
+
+           <button class="btn btn-lg" style="background-color:transparent;" onclick="traerOfertas()">
+        <i class='fas fa-archive'></i>Ofertas
+        </button>
         </li>
         <li class="nav-item">
-        <a class="nav-link" href="#"><i class='fas fa-people-arrows'></i>Cruces</a>
+
+          <button class="btn btn-lg" style="background-color:transparent;" onclick="cargarCruces()">
+        <i class='fas fa-people-arrows'></i>Cruces
+        </button>
         </li>
     </ul>
   </div>
+  <button class="btn btn-lg" style="background-color:transparent;" onclick="cambiarModo()">
+  <i class="material-icons">
+        settings
+      </i>
+</button>
+  <button class="btn btn-lg" style="background-color:transparent;" onclick="()">
+  <i class="material-icons">
+        perm_identity
+      </i>
+</button>
 </nav>
 
 <div class="container-fluid justify-content">
   <div class="row">
     <div class="col-sm-2"  id="columnaNotas">
-          <i class='far fa-edit'></i>
+    <aside name="asideNotas" id="asideNotas">
+          <div class="container">
+    <h3>
+      <i class="material-icons">
+        notes
+      </i>
       Notas
+    </h3>
 
+    <form id="formulario">
+      <input type="text" id="actividad" class="form-control">
+      <button type="submit" class="btn btn-primary">Guardar</button>
+    </form>
 
-       <!-- Span trigger modal -->
-
-      <!-- <span id="anhadirNotas" data-toggle="modal" class="fas fa-plus-circle" data-target="#modalSubscriptionForm" ><span>-->
-<!-- Modal -->
-<!-- Modal -->
-<!-- Button to Open the Modal -->
-<button type="button" class="fas fa-plus-circle" data-toggle="modal" data-target="#myModal">
-</button>
-
-<!-- The Modal -->
-<div class="modal" id="myModal">
-  <div class="modal-dialog">
-    <div class="modal-content">
-
-      <!-- Modal Header -->
-      <div class="modal-header">
-        <h4 class="modal-title">Nueva Nota</h4>
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
+    <div id="listaActividades">
+      <div class="alert alert-danger" role="alert">
+        <i class="material-icons float-left">description
+        </i>
+        <b>Texto de la Actividad</b>
+        <span class="float-right">
+          <i class="material-icons">
+            done
+          </i>
+          <i class="material-icons">
+            delete
+          </i>
+        </span>
       </div>
-
-      <!-- Modal body -->
-      <div class="modal-body">
-              <div class="form">
-          <i class="fas fa-edit prefix grey-text"></i>
-          <input type="text" id="form3" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form3">Nombre</label>
-        </div>
-
-        <div class="form">
-          <i class="fas fa-sticky-note prefix grey-text"></i>
-          <input type="textareaa" id="form2" class="form-control validate">
-          <label data-error="wrong" data-success="right" for="form2">Descripción</label>
-        </div>
-      </div>
-
-      <!-- Modal footer -->
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary">Save changes</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-      </div>
-
     </div>
+
+
+
   </div>
-</div>
-       <span id ="notes"><span>
-  <!--  <aside name="asideNotas" id="asideNotas">
-
-    </aside>-->
+    </aside>
     </div>
+
     <div class="col-sm-8">
       <i class='fas fa-table'></i>Tabla
     <form>
+      <!--checkbox-->
   <div class="form-row">
     <div class="col">
         <div class="custom-control custom-checkbox">
@@ -146,7 +147,12 @@
   </div>
 </form>
 
+        <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" id="textoBusqueda" name="textoBusqueda" placeholder="Search" aria-label="Search" onkeyup="buscar()"/>
+        </form>
 
+
+    <!--Tabla-->
       <div class="row" id="tabla" name="tabla">
         <!-- <table class="table table-hover table-bordered" id="tabla">
             <thead>
@@ -164,13 +170,28 @@
         </table> -->
     </div>
         <main>
+      <div class="container text-center">
+
+        <div class="row">
+            <table class="table table-hover table-bordered">
+                <thead id="headerTabla">
+
+                </thead>
+                <tbody id="contenido">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
     </main>
 
     </div>
-    <div class="col-sm-2" id="columnaMensajes" >
+    <div class="col-sm-2 text-center" id="columnaMensajes" >
      <i class='fas fa-envelope'></i>Mensajes
      <span id ="miBoton"><span>
-       <aside name="asideMensajes" id="asideMensajes">
+       <aside name="asideMensajes" id="asideMensajes" >
 
         </aside>
     </div>
@@ -185,16 +206,6 @@
         </div>
     </footer>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID.
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script> -->
-
     </script>
 
     <!-- build:js scripts/vendor.js -->
@@ -202,7 +213,7 @@
     <script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <!-- endbuild -->
     <!-- build:js scripts/main.js -->
-   <!--  <script src="scripts/main.js"></script>-->
+     <script src="scripts/main.js"></script>
     <script src="scripts/cambiarModo.js"></script>
       <script src="scripts/cargarTabla.js"></script>
   <script src='https://kit.fontawesome.com/a076d05399.js'></script>

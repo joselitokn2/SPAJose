@@ -97,7 +97,121 @@
                   "country": "es"
               }
           }
+      },
+      {
+        "idCandidatura": 3,
+        "idCandidate": 3,
+        "dataPresentacion": "12200329",
+        "horaPresentacion": "232059",
+        "name": "Juan",
+        "surname": "Fernandez",
+        "surname2": "Pax",
+        "dni": "65751683L",
+        "birthDate": "20001231",
+        "telf": "612987654",
+        "email": "xanbonpax@ddxx.es",
+        "primaryAddress": {
+            "streetName": "R/Rúa Inventada1",
+            "number": "23",
+            "flat": "2",
+            "door": "D",
+            "locality": "A Coruña",
+            "city": "A Coruña",
+            "municipality": "A Coruña",
+            "state": "A Coruña",
+            "postcode": 15101,
+            "country": "es"
+        },
+        "otherAddress": [
+            {
+                "order": 1,
+                "streetName": "C/Da Peña",
+                "number": "S/N",
+                "flat": "Baixa",
+                "door": "",
+                "locality": "A Coruña",
+                "city": "A Coruña",
+                "municipality": "A Coruña",
+                "state": "A Coruña",
+                "postcode": 15001,
+                "country": "es"
+            }
+        ],
+        "titulacionPracticas": {
+            "name": "Grao en Económicas",
+            "organization": "Universidade De A Coruña",
+            "telf": "+34981167000",
+            "address": {
+                "streetName": "R/Rua da Maestranza",
+                "number": "9",
+                "flat": "",
+                "door": "",
+                "locality": "A Coruña",
+                "city": "A Coruña",
+                "municipality": "A Coruña",
+                "state": "A Coruña",
+                "postcode": 15001,
+                "country": "es"
+            }
+        }
+    },
+    {
+      "idCandidatura": 6,
+      "idCandidate": 6,
+      "dataPresentacion": "20200329",
+      "horaPresentacion": "232059",
+      "name": "Jose",
+      "surname": "Garcia",
+      "surname2": "Pax",
+      "dni": "65751683L",
+      "birthDate": "20001231",
+      "telf": "612987654",
+      "email": "xanbonpax@ddxx.es",
+      "primaryAddress": {
+          "streetName": "R/Rúa Inventada1",
+          "number": "23",
+          "flat": "2",
+          "door": "D",
+          "locality": "A Coruña",
+          "city": "A Coruña",
+          "municipality": "A Coruña",
+          "state": "A Coruña",
+          "postcode": 15101,
+          "country": "es"
+      },
+      "otherAddress": [
+          {
+              "order": 1,
+              "streetName": "C/Da Peña",
+              "number": "S/N",
+              "flat": "Baixa",
+              "door": "",
+              "locality": "A Coruña",
+              "city": "A Coruña",
+              "municipality": "A Coruña",
+              "state": "A Coruña",
+              "postcode": 15001,
+              "country": "es"
+          }
+      ],
+      "titulacionPracticas": {
+          "name": "Grao en Literatura",
+          "organization": "Universidade De A Coruña",
+          "telf": "+34981167000",
+          "address": {
+              "streetName": "R/Rua da Maestranza",
+              "number": "9",
+              "flat": "",
+              "door": "",
+              "locality": "A Coruña",
+              "city": "A Coruña",
+              "municipality": "A Coruña",
+              "state": "A Coruña",
+              "postcode": 15001,
+              "country": "es"
+          }
       }
+  }
   ]
 
 

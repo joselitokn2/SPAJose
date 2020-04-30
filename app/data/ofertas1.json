@@ -1,4 +1,5 @@
- [
+{
+  "ofertas": [
       {
           "idInternshipOffer": 20,
           "idCompany": 5,
@@ -94,4 +95,4 @@
           "numberPositionsOffered": 1
      }
   ]
-
+}
